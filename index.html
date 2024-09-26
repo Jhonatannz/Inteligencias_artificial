@@ -10,20 +10,26 @@
                 line-height: 1.6;
                 margin: 20px;
                 background-color: #f4f4f9;
+                color: #333;
             }
             h1, h2 {
-                color: #333;
+                color: #2c3e50;
+                border-bottom: 2px solid #2980b9;
+                padding-bottom: 5px;
             }
             img {
                 max-width: 100%;
                 height: auto;
                 display: block;
                 margin: 10px 0;
+                border: 2px solid #2980b9;
+                border-radius: 5px;
             }
             .image-description {
                 margin: 0 0 20px 0;
                 font-style: italic;
                 color: #666;
+                text-align: center;
             }
             pre {
                 background-color: #2d2d2d;
@@ -31,6 +37,7 @@
                 padding: 20px;
                 border-radius: 5px;
                 overflow-x: auto;
+                margin: 20px 0;
             }
             code {
                 color: #f92672;
@@ -38,7 +45,28 @@
             .comment {
                 color: #75715e;
             }
-            
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                background-color: #fff;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: center;
+            }
+            th {
+                background-color: #2980b9;
+                color: white;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            tr:hover {
+                background-color: #d9e6f2;
+            }
         </style>
     </head>
     <body>
