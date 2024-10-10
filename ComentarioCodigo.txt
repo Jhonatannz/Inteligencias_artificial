@@ -1,0 +1,44 @@
+.Descripción general
+El código permite a dos jugadores (HUMANO y COMPUTADORA) turnarse para hacer movimientos en un tablero de 3x3, representado como una matriz. 
+El objetivo del juego es que uno de los jugadores logre alinear tres de sus fichas (ya sea en una fila, columna o diagonal), lo que se define 
+como una condición de victoria. La computadora, al ser controlada por el código, usa el algoritmo Minimax para calcular sus movimientos, asegurándose 
+de maximizar sus oportunidades de ganar y minimizar las posibilidades de que el jugador humano lo haga.
+
+.Funciones principales
+Constantes de jugadores:
+	HUMANO = -1 y COMPUTADORA = 1 son las constantes que representan a los jugadores en el tablero. La computadora se representa por "1" y el humano por "-1", 
+	mientras que las posiciones vacías se representan con "0".
+
+ganador(tablero, jugador): Esta función verifica si el jugador dado ha ganado el juego. Para ello, compara el estado actual del tablero con una serie de posibles 
+	combinaciones ganadoras (filas, columnas y diagonales). Si alguna combinación coincide con tres fichas del mismo jugador, la función devuelve True, indicando 
+	que ese jugador ha ganado.
+
+tablero_lleno(tablero): Esta función recorre el tablero y verifica si ya no quedan movimientos posibles, es decir, si todas las casillas están ocupadas. Devuelve True 
+	si el tablero está lleno y False si aún quedan espacios vacíos.
+
+evaluar(tablero): Evalúa el estado del juego. Si la computadora ha ganado, devuelve 1. Si ha ganado el humano, devuelve -1. Si no hay ganador, devuelve 0. Esta función 
+	se usa como criterio en el algoritmo Minimax para decidir el mejor movimiento.
+
+minimax(tablero, profundidad, jugador): Esta es la implementación del algoritmo Minimax. El algoritmo simula todas las posibles jugadas futuras para encontrar la mejor
+	 jugada que maximice las posibilidades de la computadora de ganar o minimizar las del oponente (humano). El algoritmo recorre todas las posiciones posibles en 
+	el tablero. Si es el turno de la computadora, busca maximizar el valor (mejorar sus chances); si es el turno del humano, intenta minimizarlo 
+	(para evitar que la computadora gane).
+
+movimiento_computadora(tablero): Usa el algoritmo Minimax para determinar el mejor movimiento para la computadora. Recorre todas las posiciones vacías en el tablero, 
+	simula las jugadas posibles utilizando Minimax, y selecciona la posición que maximice las posibilidades de la computadora de ganar.
+
+imprimir_tablero(tablero): Esta función imprime el estado actual del tablero en la consola. Cada fila del tablero se imprime como una lista, permitiendo que el jugador 
+	humano vea el estado del juego después de cada turno.
+
+juego(): La función principal del programa, que simula el desarrollo completo del juego. Dentro de un bucle infinito, alterna entre el turno del humano y el de la 
+	computadora hasta que se cumpla alguna de las siguientes condiciones:
+		Alguien gana (humano o computadora).
+		El tablero está lleno, lo que implica un empate.
+
+.Flujo del programa
+El tablero se inicializa vacío y el juego comienza.
+El humano ingresa su movimiento (fila y columna). Si el movimiento es válido (la casilla está vacía), se actualiza el tablero.
+Se verifica si el humano ha ganado. Si es así, se muestra un mensaje y el juego termina.
+Si no hay ganador, la computadora realiza su movimiento calculado por Minimax.
+Se verifica si la computadora ha ganado. Si es así, se muestra un mensaje y el juego termina.
+Si no hay ganador y el tablero no está lleno, el ciclo se repite.
